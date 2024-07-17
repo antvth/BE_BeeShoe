@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="DuAnTotNghiep" />
         <module name="DANTN" />
+        <module name="BE_DATN" />
       </profile>
       <profile name="Annotation profile for Unknown" enabled="true">
         <sourceOutputDir name="../../target/generated-sources/annotations" />
@@ -20,6 +21,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="BE_DATN" options="-parameters" />
       <module name="DANTN" options="-parameters" />
       <module name="DuAnTotNghiep" options="-parameters" />
     </option>
