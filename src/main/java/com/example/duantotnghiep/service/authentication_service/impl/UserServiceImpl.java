@@ -14,7 +14,6 @@ import com.example.duantotnghiep.request.RegisterRequest;
 import com.example.duantotnghiep.response.MessageResponse;
 import com.example.duantotnghiep.response.TokenResponse;
 import com.example.duantotnghiep.service.authentication_service.UserService;
-import com.example.duantotnghiep.util.CodeGenerator;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 import lombok.RequiredArgsConstructor;

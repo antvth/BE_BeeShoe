@@ -1,6 +1,8 @@
 package com.example.duantotnghiep.controller.ban_tai_quay_controller;
 
 import com.example.duantotnghiep.entity.GioHangChiTiet;
+import com.example.duantotnghiep.mapper.GioHangCustom;
+import com.example.duantotnghiep.response.MessageResponse;
 import com.example.duantotnghiep.service.ban_tai_quay_service.impl.CartDetailCounterServiceImpl;
 import com.opencsv.exceptions.CsvValidationException;
 import jakarta.persistence.EntityNotFoundException;
@@ -27,7 +29,7 @@ public class CartDetailCounterController {
     public ResponseEntity<List<GioHangCustom>> show(
             @RequestParam(name = "id") UUID id,
             @RequestParam(name = "pageNumber", defaultValue = "0") Integer pageNumber,
-            @RequestParam(name = "pageSize", defaultValue = "3") Integer pageSize) {
+            @RequestParam(name = "pageSize", defaultValue = "10") Integer pageSize) {
         return ResponseEntity.ok(gioHangChiTietService.loadGH(id, pageNumber, pageSize));
     }
 
@@ -37,7 +39,7 @@ public class CartDetailCounterController {
         return ResponseEntity.ok(gioHangChiTietService.loadGHTien(id));
     }
 
-    @PostMapping("them-san-pham")   
+    @PostMapping("them-san-pham")
     public ResponseEntity<MessageResponse> themSanPhamVaoGioHangChiTiet(
             @RequestParam(name = "idGioHang") UUID idGioHang,
             @RequestParam(name = "idSanPhamChiTiet") UUID idSanPhamChiTiet,
