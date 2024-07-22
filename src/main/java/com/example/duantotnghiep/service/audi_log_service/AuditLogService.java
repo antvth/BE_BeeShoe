@@ -5,6 +5,7 @@ import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 import com.opencsv.exceptions.CsvException;
 import com.opencsv.exceptions.CsvValidationException;
+import org.apache.poi.ss.formula.functions.T;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
@@ -13,9 +14,11 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class AuditLogService {
@@ -144,7 +147,7 @@ public class AuditLogService {
     }
 
     public List<AuditLog> readAuditLog(String filePath, int page, int size, String searchUsername,
-            LocalDate specificDate, LocalDate startDate, LocalDate endDate) throws IOException, CsvValidationException {
+                                       LocalDate specificDate, LocalDate startDate, LocalDate endDate) throws IOException, CsvValidationException {
         List<AuditLog> auditLogList = new ArrayList<>();
         try (CSVReader reader = new CSVReader(
                 new BufferedReader(new InputStreamReader(new FileInputStream(filePath), StandardCharsets.UTF_8)))) {
@@ -212,182 +215,182 @@ public class AuditLogService {
     }
 
     public List<AuditLog> readAuditLogKhuyenmai(int page, int size, String searchUsername, LocalDate specificDate,
-            LocalDate startDate, LocalDate endDate) throws IOException, CsvValidationException {
+                                                LocalDate startDate, LocalDate endDate) throws IOException, CsvValidationException {
         return readAuditLog(AUDIT_LOG_KHUYENMAI_FILE_PATH, page, size, searchUsername, specificDate, startDate,
                 endDate);
     }
 
     public List<AuditLog> readAuditLogHoadon(int page, int size, String searchUsername, LocalDate specificDate,
-            LocalDate startDate, LocalDate endDate) throws IOException, CsvValidationException {
+                                             LocalDate startDate, LocalDate endDate) throws IOException, CsvValidationException {
         return readAuditLog(AUDIT_LOG_HOADON_FILE_PATH, page, size, searchUsername, specificDate, startDate,
                 endDate);
     }
 
     public List<AuditLog> readAuditLogHoadonChiTiet(int page, int size, String searchUsername, LocalDate specificDate,
-            LocalDate startDate, LocalDate endDate) throws IOException, CsvValidationException {
+                                                    LocalDate startDate, LocalDate endDate) throws IOException, CsvValidationException {
         return readAuditLog(AUDIT_LOG_HOADON_CHI_TIET_FILE_PATH, page, size, searchUsername, specificDate, startDate,
                 endDate);
     }
 
     public List<AuditLog> readAuditLogChatLieu(int page, int size, String searchUsername, LocalDate specificDate,
-            LocalDate startDate, LocalDate endDate) throws IOException, CsvValidationException {
+                                               LocalDate startDate, LocalDate endDate) throws IOException, CsvValidationException {
         return readAuditLog(AUDIT_LOG_CHATLIEU_FILE_PATH, page, size, searchUsername, specificDate, startDate,
                 endDate);
     }
 
     public List<AuditLog> readAuditLogSanPham(int page, int size, String searchUsername, LocalDate specificDate,
-            LocalDate startDate, LocalDate endDate) throws IOException, CsvValidationException {
+                                              LocalDate startDate, LocalDate endDate) throws IOException, CsvValidationException {
         return readAuditLog(AUDIT_LOG_SANPHAM_FILE_PATH, page, size, searchUsername, specificDate, startDate,
                 endDate);
     }
 
     public List<AuditLog> readAuditLogSize(int page, int size, String searchUsername, LocalDate specificDate,
-            LocalDate startDate, LocalDate endDate) throws IOException, CsvValidationException {
+                                           LocalDate startDate, LocalDate endDate) throws IOException, CsvValidationException {
         return readAuditLog(AUDIT_LOG_SIZE_FILE_PATH, page, size, searchUsername, specificDate, startDate,
                 endDate);
     }
 
     public List<AuditLog> readAuditLogMauSac(int page, int size, String searchUsername, LocalDate specificDate,
-            LocalDate startDate, LocalDate endDate) throws IOException, CsvValidationException {
+                                             LocalDate startDate, LocalDate endDate) throws IOException, CsvValidationException {
         return readAuditLog(AUDIT_LOG_MAUSAC_FILE_PATH, page, size, searchUsername, specificDate, startDate,
                 endDate);
     }
 
     public List<AuditLog> readAuditLogDanhMuc(int page, int size, String searchUsername, LocalDate specificDate,
-            LocalDate startDate, LocalDate endDate) throws IOException, CsvValidationException {
+                                              LocalDate startDate, LocalDate endDate) throws IOException, CsvValidationException {
         return readAuditLog(AUDIT_LOG_DANHMUC_FILE_PATH, page, size, searchUsername, specificDate, startDate,
                 endDate);
     }
 
     public List<AuditLog> readAuditLogThuongHieu(int page, int size, String searchUsername, LocalDate specificDate,
-            LocalDate startDate, LocalDate endDate) throws IOException, CsvValidationException {
+                                                 LocalDate startDate, LocalDate endDate) throws IOException, CsvValidationException {
         return readAuditLog(AUDIT_LOG_THUONGHIEU_FILE_PATH, page, size, searchUsername, specificDate, startDate,
                 endDate);
     }
 
     public List<AuditLog> readAuditLogXuatXu(int page, int size, String searchUsername, LocalDate specificDate,
-            LocalDate startDate, LocalDate endDate) throws IOException, CsvValidationException {
+                                             LocalDate startDate, LocalDate endDate) throws IOException, CsvValidationException {
         return readAuditLog(AUDIT_LOG_XUATXU_FILE_PATH, page, size, searchUsername, specificDate, startDate,
                 endDate);
     }
 
     public List<AuditLog> readAuditLogKieuDe(int page, int size, String searchUsername, LocalDate specificDate,
-            LocalDate startDate, LocalDate endDate) throws IOException, CsvValidationException {
+                                             LocalDate startDate, LocalDate endDate) throws IOException, CsvValidationException {
         return readAuditLog(AUDIT_LOG_KIEUDE_FILE_PATH, page, size, searchUsername, specificDate, startDate,
                 endDate);
     }
 
     public List<AuditLog> readAuditLogNhanVien(int page, int size, String searchUsername, LocalDate specificDate,
-            LocalDate startDate, LocalDate endDate) throws IOException, CsvValidationException {
+                                               LocalDate startDate, LocalDate endDate) throws IOException, CsvValidationException {
         return readAuditLog(AUDIT_LOG_NHANVIEN_FILE_PATH, page, size, searchUsername, specificDate, startDate,
                 endDate);
     }
 
     public List<AuditLog> readAuditLogKhachHang(int page, int size, String searchUsername, LocalDate specificDate,
-            LocalDate startDate, LocalDate endDate) throws IOException, CsvValidationException {
+                                                LocalDate startDate, LocalDate endDate) throws IOException, CsvValidationException {
         return readAuditLog(AUDIT_LOG_KHACHHANG_FILE_PATH, page, size, searchUsername, specificDate, startDate,
                 endDate);
     }
 
     public List<AuditLog> readAuditLogVoucher(int page, int size, String searchUsername, LocalDate specificDate,
-            LocalDate startDate, LocalDate endDate) throws IOException, CsvValidationException {
+                                              LocalDate startDate, LocalDate endDate) throws IOException, CsvValidationException {
         return readAuditLog(AUDIT_LOG_VOUCHER_FILE_PATH, page, size, searchUsername, specificDate, startDate,
                 endDate);
     }
 
     public void writeAuditLogHoadon(String action, String username, String email, String Id, String Ma, String Ten,
-            String TenKhach, String Loai)
+                                    String TenKhach, String Loai)
             throws IOException, CsvValidationException {
         AuditLog auditLog = new AuditLog(action, username, email, Id, Ma, Ten, TenKhach, Loai, LocalDateTime.now());
         writeAuditLog(auditLog, AUDIT_LOG_HOADON_FILE_PATH);
     }
 
     public void writeAuditLogHoadonChiTiet(String action, String username, String email, String Id, String Ma,
-            String Ten, String TenKhach, String Loai)
+                                           String Ten, String TenKhach, String Loai)
             throws IOException, CsvValidationException {
         AuditLog auditLog = new AuditLog(action, username, email, Id, Ma, Ten, TenKhach, Loai, LocalDateTime.now());
         writeAuditLog(auditLog, AUDIT_LOG_HOADON_CHI_TIET_FILE_PATH);
     }
 
     public void writeAuditLogSanPham(String action, String username, String email, String Id, String Ma, String Ten,
-            String TenKhach, String Loai)
+                                     String TenKhach, String Loai)
             throws IOException, CsvValidationException {
         AuditLog auditLog = new AuditLog(action, username, email, Id, Ma, Ten, TenKhach, Loai, LocalDateTime.now());
         writeAuditLog(auditLog, AUDIT_LOG_SANPHAM_FILE_PATH);
     }
 
     public void writeAuditLogSize(String action, String username, String email, String Id, String Ma, String Ten,
-            String TenKhach, String Loai)
+                                  String TenKhach, String Loai)
             throws IOException, CsvValidationException {
         AuditLog auditLog = new AuditLog(action, username, email, Id, Ma, Ten, TenKhach, Loai, LocalDateTime.now());
         writeAuditLog(auditLog, AUDIT_LOG_SIZE_FILE_PATH);
     }
 
     public void writeAuditLogChatlieu(String action, String username, String email, String Id, String Ma, String Ten,
-            String TenKhach, String Loai)
+                                      String TenKhach, String Loai)
             throws IOException, CsvValidationException {
         AuditLog auditLog = new AuditLog(action, username, email, Id, Ma, Ten, TenKhach, Loai, LocalDateTime.now());
         writeAuditLog(auditLog, AUDIT_LOG_CHATLIEU_FILE_PATH);
     }
 
     public void writeAuditLogMausac(String action, String username, String email, String Id, String Ma, String Ten,
-            String TenKhach, String Loai)
+                                    String TenKhach, String Loai)
             throws IOException, CsvValidationException {
         AuditLog auditLog = new AuditLog(action, username, email, Id, Ma, Ten, TenKhach, Loai, LocalDateTime.now());
         writeAuditLog(auditLog, AUDIT_LOG_MAUSAC_FILE_PATH);
     }
 
     public void writeAuditLogDanhmuc(String action, String username, String email, String Id, String Ma, String Ten,
-            String TenKhach, String Loai)
+                                     String TenKhach, String Loai)
             throws IOException, CsvValidationException {
         AuditLog auditLog = new AuditLog(action, username, email, Id, Ma, Ten, TenKhach, Loai, LocalDateTime.now());
         writeAuditLog(auditLog, AUDIT_LOG_DANHMUC_FILE_PATH);
     }
 
     public void writeAuditLogThuonghieu(String action, String username, String email, String Id, String Ma, String Ten,
-            String TenKhach, String Loai)
+                                        String TenKhach, String Loai)
             throws IOException, CsvValidationException {
         AuditLog auditLog = new AuditLog(action, username, email, Id, Ma, Ten, TenKhach, Loai, LocalDateTime.now());
         writeAuditLog(auditLog, AUDIT_LOG_THUONGHIEU_FILE_PATH);
     }
 
     public void writeAuditLogXuatxu(String action, String username, String email, String Id, String Ma, String Ten,
-            String TenKhach, String Loai)
+                                    String TenKhach, String Loai)
             throws IOException, CsvValidationException {
         AuditLog auditLog = new AuditLog(action, username, email, Id, Ma, Ten, TenKhach, Loai, LocalDateTime.now());
         writeAuditLog(auditLog, AUDIT_LOG_XUATXU_FILE_PATH);
     }
 
     public void writeAuditLogKieude(String action, String username, String email, String Id, String Ma, String Ten,
-            String TenKhach, String Loai)
+                                    String TenKhach, String Loai)
             throws IOException, CsvValidationException {
         AuditLog auditLog = new AuditLog(action, username, email, Id, Ma, Ten, TenKhach, Loai, LocalDateTime.now());
         writeAuditLog(auditLog, AUDIT_LOG_KIEUDE_FILE_PATH);
     }
 
     public void writeAuditLogNhanvien(String action, String username, String email, String Id, String Ma, String Ten,
-            String TenKhach, String Loai)
+                                      String TenKhach, String Loai)
             throws IOException, CsvValidationException {
         AuditLog auditLog = new AuditLog(action, username, email, Id, Ma, Ten, TenKhach, Loai, LocalDateTime.now());
         writeAuditLog(auditLog, AUDIT_LOG_NHANVIEN_FILE_PATH);
     }
 
     public void writeAuditLogKhachhang(String action, String username, String email, String Id, String Ma, String Ten,
-            String TenKhach, String Loai)
+                                       String TenKhach, String Loai)
             throws IOException, CsvValidationException {
         AuditLog auditLog = new AuditLog(action, username, email, Id, Ma, Ten, TenKhach, Loai, LocalDateTime.now());
         writeAuditLog(auditLog, AUDIT_LOG_KHACHHANG_FILE_PATH);
     }
 
     public void writeAuditLogVoucher(String action, String username, String email, String Id, String Ma, String Ten,
-            String TenKhach, String Loai)
+                                     String TenKhach, String Loai)
             throws IOException, CsvValidationException {
         AuditLog auditLog = new AuditLog(action, username, email, Id, Ma, Ten, TenKhach, Loai, LocalDateTime.now());
         writeAuditLog(auditLog, AUDIT_LOG_VOUCHER_FILE_PATH);
     }
 
     public void writeAuditLogKhuyenmai(String action, String username, String email, String Id, String Ma, String Ten,
-            String TenKhach, String Loai)
+                                       String TenKhach, String Loai)
             throws IOException, CsvValidationException {
         AuditLog auditLog = new AuditLog(action, username, email, Id, Ma, Ten, TenKhach, Loai, LocalDateTime.now());
         writeAuditLog(auditLog, AUDIT_LOG_KHUYENMAI_FILE_PATH);
