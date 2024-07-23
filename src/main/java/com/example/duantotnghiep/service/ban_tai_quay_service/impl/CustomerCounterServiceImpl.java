@@ -16,7 +16,6 @@ import com.example.duantotnghiep.response.KhachHangResponse;
 import com.example.duantotnghiep.response.MessageResponse;
 import com.example.duantotnghiep.service.audi_log_service.AuditLogService;
 import com.example.duantotnghiep.service.ban_tai_quay_service.CustomerCounterService;
-import com.example.duantotnghiep.util.RemoveDiacritics;
 import com.example.duantotnghiep.util.SendConfirmationEmail;
 import com.opencsv.exceptions.CsvValidationException;
 import org.springframework.beans.factory.annotation.Autowired;

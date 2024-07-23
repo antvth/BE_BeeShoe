@@ -3,6 +3,7 @@ package com.example.duantotnghiep.controller.authentication_controller;
 import com.example.duantotnghiep.entity.RefreshToken;
 import com.example.duantotnghiep.jwt.JwtService;
 import com.example.duantotnghiep.model.UserCustomDetails;
+import com.example.duantotnghiep.request.ForgotPassword;
 import com.example.duantotnghiep.request.LoginRequest;
 import com.example.duantotnghiep.request.RegisterRequest;
 import com.example.duantotnghiep.response.MessageResponse;
@@ -12,12 +13,7 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
 
