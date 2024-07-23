@@ -2,6 +2,11 @@ package com.example.duantotnghiep.service.thuoc_tinh_dong_san_pham_service;
 
 import com.example.duantotnghiep.entity.SanPham;
 import com.example.duantotnghiep.request.ProductRequest;
+import com.example.duantotnghiep.response.MessageResponse;
+import com.example.duantotnghiep.response.ProductDetailUpdateReponse;
+import com.example.duantotnghiep.response.ProductResponse;
+import com.example.duantotnghiep.response.ProductUpdateResponse;
+import com.example.duantotnghiep.response.SanPhamResponse;
 import com.opencsv.exceptions.CsvValidationException;
 import io.jsonwebtoken.io.IOException;
 import org.springframework.data.repository.query.Param;

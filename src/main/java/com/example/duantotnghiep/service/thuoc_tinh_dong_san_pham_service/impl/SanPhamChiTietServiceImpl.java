@@ -1,8 +1,11 @@
 package com.example.duantotnghiep.service.thuoc_tinh_dong_san_pham_service.impl;
 
+import com.example.duantotnghiep.entity.*;
+import com.example.duantotnghiep.repository.*;
 import com.example.duantotnghiep.request.ProductDetailRequest;
 import com.example.duantotnghiep.response.MessageResponse;
 import com.example.duantotnghiep.response.SanPhamChiTietResponse;
+import com.example.duantotnghiep.service.thuoc_tinh_dong_san_pham_service.SanPhamChiTietService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
