@@ -1,6 +1,7 @@
 package com.example.duantotnghiep.repository;
 
 import com.example.duantotnghiep.entity.TaiKhoan;
+import com.example.duantotnghiep.enums.TypeAccountEnum;
 import com.example.duantotnghiep.response.KhachHangResponse;
 import com.example.duantotnghiep.response.NhanVienOrderResponse;
 import com.example.duantotnghiep.response.QLKhachHangResponse;
@@ -11,6 +12,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 public interface KhachHangRepository extends JpaRepository<TaiKhoan, UUID> {
