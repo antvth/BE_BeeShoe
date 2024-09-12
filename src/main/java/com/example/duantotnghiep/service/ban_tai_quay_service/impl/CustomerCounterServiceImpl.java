@@ -1,21 +1,14 @@
 package com.example.duantotnghiep.service.ban_tai_quay_service.impl;
 
-import com.example.duantotnghiep.entity.DiaChi;
-import com.example.duantotnghiep.entity.GioHang;
-import com.example.duantotnghiep.entity.HoaDon;
-import com.example.duantotnghiep.entity.LoaiTaiKhoan;
-import com.example.duantotnghiep.entity.TaiKhoan;
+import com.example.duantotnghiep.entity.*;
 import com.example.duantotnghiep.enums.TypeAccountEnum;
-import com.example.duantotnghiep.repository.DiaChiRepository;
-import com.example.duantotnghiep.repository.GioHangRepository;
-import com.example.duantotnghiep.repository.HoaDonRepository;
-import com.example.duantotnghiep.repository.LoaiTaiKhoanRepository;
-import com.example.duantotnghiep.repository.TaiKhoanRepository;
+import com.example.duantotnghiep.repository.*;
 import com.example.duantotnghiep.request.CreateKhachRequest;
 import com.example.duantotnghiep.response.KhachHangResponse;
 import com.example.duantotnghiep.response.MessageResponse;
 import com.example.duantotnghiep.service.audi_log_service.AuditLogService;
 import com.example.duantotnghiep.service.ban_tai_quay_service.CustomerCounterService;
+import com.example.duantotnghiep.util.RemoveDiacritics;
 import com.example.duantotnghiep.util.SendConfirmationEmail;
 import com.opencsv.exceptions.CsvValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,9 +20,11 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.text.Normalizer;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.regex.Pattern;
 
 @Service
 public class CustomerCounterServiceImpl implements CustomerCounterService {

@@ -1,11 +1,15 @@
 package com.example.duantotnghiep.service.ban_tai_quay_service.impl;
 
 import com.example.duantotnghiep.entity.*;
-import com.example.duantotnghiep.enums.TypeAccountEnum;
+import com.example.duantotnghiep.enums.*;
 import com.example.duantotnghiep.repository.*;
+import com.example.duantotnghiep.request.HoaDonGiaoThanhToanRequest;
+import com.example.duantotnghiep.request.HoaDonThanhToanRequest;
 import com.example.duantotnghiep.response.*;
 import com.example.duantotnghiep.service.audi_log_service.AuditLogService;
 import com.example.duantotnghiep.service.ban_tai_quay_service.OrderCounterService;
+import com.example.duantotnghiep.util.FormatNumber;
+import com.example.duantotnghiep.util.RemoveDiacritics;
 import com.opencsv.exceptions.CsvValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -26,7 +30,6 @@ import java.util.UUID;
 
 @Service
 public class OrderCounterServiceImpl implements OrderCounterService {
-
 
     @Autowired
     private HoaDonRepository hoaDonRepository;
@@ -362,4 +365,5 @@ public class OrderCounterServiceImpl implements OrderCounterService {
         hoaDonRepository.save(hoaDon);
         return MessageResponse.builder().message("Thành công").build();
     }
+
 }

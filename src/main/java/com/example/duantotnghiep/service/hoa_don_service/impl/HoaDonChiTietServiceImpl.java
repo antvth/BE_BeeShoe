@@ -1,9 +1,9 @@
 package com.example.duantotnghiep.service.hoa_don_service.impl;
 
+import com.example.duantotnghiep.config.VnPayConfigTaiQuay;
 import com.example.duantotnghiep.entity.*;
 import com.example.duantotnghiep.enums.StatusOrderEnums;
-import com.example.duantotnghiep.repository.ChiTietSanPhamRepository;
-import com.example.duantotnghiep.repository.SanPhamRepository;
+import com.example.duantotnghiep.repository.*;
 import com.example.duantotnghiep.request.TraHangRequest;
 import com.example.duantotnghiep.request.TrangThaiHoaDonRequest;
 import com.example.duantotnghiep.request.TransactionRequest;
@@ -11,6 +11,7 @@ import com.example.duantotnghiep.request.XacNhanThanhToanRequest;
 import com.example.duantotnghiep.response.*;
 import com.example.duantotnghiep.service.audi_log_service.AuditLogService;
 import com.example.duantotnghiep.service.hoa_don_service.HoaDonChiTietService;
+import com.example.duantotnghiep.util.FormatNumber;
 import com.opencsv.exceptions.CsvValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -442,7 +443,7 @@ public class HoaDonChiTietServiceImpl implements HoaDonChiTietService {
         // Hoàn tiền
         LoaiHinhThucThanhToan loaiHinhThucThanhToan = new LoaiHinhThucThanhToan();
         loaiHinhThucThanhToan.setId(UUID.randomUUID());
-        loaiHinhThucThanhToan.setNgayTao(new Date(System.currentTimeMillis()));
+        loaiHinhThucThanhToan.setNgayTao(new java.sql.Date(System.currentTimeMillis()));
         loaiHinhThucThanhToan.setTenLoai("Nhân viên hoàn tiền");
         HinhThucThanhToan hinhThucThanhToan = new HinhThucThanhToan();
         hinhThucThanhToan.setId(UUID.randomUUID());

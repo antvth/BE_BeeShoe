@@ -1,5 +1,6 @@
 package com.example.duantotnghiep.service.hoa_don_service.impl;
 
+import com.example.duantotnghiep.config.VnPayConfigTaiQuay;
 import com.example.duantotnghiep.entity.*;
 import com.example.duantotnghiep.enums.StatusOrderEnums;
 import com.example.duantotnghiep.repository.*;
@@ -9,6 +10,8 @@ import com.example.duantotnghiep.request.TrangThaiHoaDonRequest;
 import com.example.duantotnghiep.response.MessageResponse;
 import com.example.duantotnghiep.service.audi_log_service.AuditLogService;
 import com.example.duantotnghiep.service.hoa_don_service.TrangThaiHoaDonService;
+import com.example.duantotnghiep.util.FormatNumber;
+import com.example.duantotnghiep.util.SendEmailOrder;
 import com.opencsv.exceptions.CsvValidationException;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
@@ -95,7 +98,7 @@ public class TrangThaiHoaDonServiceImpl implements TrangThaiHoaDonService {
                     System.out.println("Có chạy vào đây khoong 1");
                     LoaiHinhThucThanhToan loaiHinhThucThanhToan = new LoaiHinhThucThanhToan();
                     loaiHinhThucThanhToan.setId(UUID.randomUUID());
-                    loaiHinhThucThanhToan.setNgayTao(new Date(System.currentTimeMillis()));
+                    loaiHinhThucThanhToan.setNgayTao(new java.sql.Date(System.currentTimeMillis()));
                     loaiHinhThucThanhToan.setTenLoai("Khách thanh toán");
                     loaiHinhThucThanhToanRepository.save(loaiHinhThucThanhToan);
 
@@ -115,7 +118,7 @@ public class TrangThaiHoaDonServiceImpl implements TrangThaiHoaDonService {
                     for (HinhThucThanhToan x : hoaDon.getHinhThucThanhToanList()) {
                         LoaiHinhThucThanhToan loaiHinhThucThanhToan = new LoaiHinhThucThanhToan();
                         loaiHinhThucThanhToan.setId(UUID.randomUUID());
-                        loaiHinhThucThanhToan.setNgayTao(new Date(System.currentTimeMillis()));
+                        loaiHinhThucThanhToan.setNgayTao(new java.sql.Date(System.currentTimeMillis()));
                         loaiHinhThucThanhToan.setTenLoai("Khách thanh toán");
                         loaiHinhThucThanhToanRepository.save(loaiHinhThucThanhToan);
 

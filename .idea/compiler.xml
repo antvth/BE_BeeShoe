@@ -9,7 +9,6 @@
         <outputRelativeToContentRoot value="true" />
         <module name="DuAnTotNghiep" />
         <module name="DANTN" />
-        <module name="BE_DATN" />
       </profile>
       <profile name="Annotation profile for Unknown" enabled="true">
         <sourceOutputDir name="../../target/generated-sources/annotations" />

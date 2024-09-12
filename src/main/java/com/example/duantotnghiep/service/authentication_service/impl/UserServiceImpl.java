@@ -6,17 +6,20 @@ import com.example.duantotnghiep.entity.TaiKhoan;
 import com.example.duantotnghiep.enums.TypeAccountEnum;
 import com.example.duantotnghiep.jwt.JwtService;
 import com.example.duantotnghiep.model.UserCustomDetails;
+import com.example.duantotnghiep.repository.TaiKhoanRepository;
 import com.example.duantotnghiep.repository.LoaiTaiKhoanRepository;
 import com.example.duantotnghiep.repository.RefreshTokenRepository;
-import com.example.duantotnghiep.repository.TaiKhoanRepository;
+import com.example.duantotnghiep.request.ForgotPassword;
 import com.example.duantotnghiep.request.LoginRequest;
 import com.example.duantotnghiep.request.RegisterRequest;
 import com.example.duantotnghiep.response.MessageResponse;
 import com.example.duantotnghiep.response.TokenResponse;
 import com.example.duantotnghiep.service.authentication_service.UserService;
+import com.example.duantotnghiep.util.CodeGenerator;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
@@ -25,6 +28,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.sql.Timestamp;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -159,12 +163,12 @@ public class UserServiceImpl implements UserService {
         MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, "utf-8");
         try {
             helper.setTo(email);
-            helper.setSubject("Chào mừng bạn đến với Nice Shoe");
+            helper.setSubject("Chào mừng bạn đến với Bee Shoe");
 
-            String htmlMsg = "<h1>Chào mừng bạn đến với <span style='color: #ff9900;'>NICE SHOE</span> của chúng tôi!</h1>\n" +
-                    "<p>Xin chân thành cảm ơn bạn đã đăng ký nhận <span style='color: #ff9900;'>NICE SHOE</span> của chúng tôi. Chúng tôi sẽ cung cấp cho bạn thông tin cập\n" +
+            String htmlMsg = "<h1>Chào mừng bạn đến với <span style='color: #ff9900;'>BEE SHOE</span> của chúng tôi!</h1>\n" +
+                    "<p>Xin chân thành cảm ơn bạn đã đăng ký nhận <span style='color: #ff9900;'>BEE SHOE</span> của chúng tôi. Chúng tôi sẽ cung cấp cho bạn thông tin cập\n" +
                     "    nhật về tin tức và ưu đãi mới nhất.</p>\n" +
-                    "<h3>Ưu điểm của <span style='color: #ff9900;'>NICE SHOE</span>:</h3>\n" +
+                    "<h3>Ưu điểm của <span style='color: #ff9900;'>BEE SHOE</span>:</h3>\n" +
                     "<ul>\n" +
                     "    <li>Thông tin mới nhất về sản phẩm và dịch vụ của chúng tôi</li>\n" +
                     "    <li>Ưu đãi đặc biệt và khuyến mãi hấp dẫn</li>\n" +
