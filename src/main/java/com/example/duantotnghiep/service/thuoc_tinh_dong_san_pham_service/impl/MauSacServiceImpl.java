@@ -1,9 +1,13 @@
 package com.example.duantotnghiep.service.thuoc_tinh_dong_san_pham_service.impl;
 
+import com.example.duantotnghiep.entity.ChatLieu;
 import com.example.duantotnghiep.entity.MauSac;
+import com.example.duantotnghiep.entity.TaiKhoan;
 import com.example.duantotnghiep.repository.MauSacRepository;
+import com.example.duantotnghiep.repository.TaiKhoanRepository;
 import com.example.duantotnghiep.request.MauSacRequest;
 import com.example.duantotnghiep.response.MessageResponse;
+import com.example.duantotnghiep.service.audi_log_service.AuditLogService;
 import com.example.duantotnghiep.service.thuoc_tinh_dong_san_pham_service.MauSacService;
 import com.opencsv.exceptions.CsvValidationException;
 import org.springframework.beans.factory.annotation.Autowired;

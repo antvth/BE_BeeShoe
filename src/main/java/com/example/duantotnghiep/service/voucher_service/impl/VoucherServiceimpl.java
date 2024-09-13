@@ -1,11 +1,13 @@
 package com.example.duantotnghiep.service.voucher_service.impl;
 
+import com.example.duantotnghiep.entity.GiamGia;
 import com.example.duantotnghiep.entity.TaiKhoan;
 import com.example.duantotnghiep.entity.Voucher;
 import com.example.duantotnghiep.repository.TaiKhoanRepository;
 import com.example.duantotnghiep.repository.VoucherRepository;
 import com.example.duantotnghiep.request.VoucherRequest;
 import com.example.duantotnghiep.response.MessageResponse;
+import com.example.duantotnghiep.response.ProductDetailResponse;
 import com.example.duantotnghiep.service.audi_log_service.AuditLogService;
 import com.example.duantotnghiep.service.voucher_service.VoucherService;
 import com.opencsv.exceptions.CsvValidationException;
@@ -17,9 +19,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;

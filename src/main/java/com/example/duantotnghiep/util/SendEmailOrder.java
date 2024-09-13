@@ -42,7 +42,7 @@ public class SendEmailOrder {
 
             String htmlMsg = "<body style=\"font-family: Arial, sans-serif;\">\n" +
                     "    <h1 style=\"color: #ff9900;\">Kính gửi Quý khách hàng: " + hoaDon.getTenNguoiNhan() + "</h1>\n" +
-                    "    <h6 style=\"color: black; font-size: 15px;\">Chúng tôi xin chân thành cảm ơn Quý khách đã đặt hàng tại <strong  style=\"color: #ff9900;\">NICE SHOE</strong>.</h6>\n" +
+                    "    <h6 style=\"color: black; font-size: 15px;\">Chúng tôi xin chân thành cảm ơn Quý khách đã đặt hàng tại <strong  style=\"color: #ff9900;\">BEE SHOE</strong>.</h6>\n" +
                     "    <h6 style=\"color: black; font-size: 15px;\">Thông tin chi tiết về đơn hàng của Quý khách như sau:</h6>\n" +
                     "    <table style=\"width: 100%; border-collapse: collapse; margin-bottom: 20px;\">\n" +
                     "        <tr>\n" +
@@ -101,10 +101,10 @@ public class SendEmailOrder {
                     "    <p>Chúng tôi sẽ xử lý đơn hàng của Quý khách sớm nhất có thể và thông báo cho Quý khách khi đơn hàng đã được giao\n" +
                     "        cho dịch vụ vận chuyển.</p>\n" +
                     "    <p>Nếu có bất kỳ thắc mắc hoặc yêu cầu nào, vui lòng liên hệ với chúng tôi qua thông tin sau:</p>\n" +
-                    "    <p>- Điện thoại: 0971066455\n" +
-                    "        - Email: niceshoepoly@gmail.com</p>\n" +
+                    "    <p>- Điện thoại: 0983280968\n" +
+                    "        - Email: beeshoepoly@gmail.com</p>\n" +
                     "    <p>Xin chân thành cảm ơn Quý khách hàng đã tin tưởng và lựa chọn sản phẩm của chúng tôi.</p>\n" +
-                    "    <footer style=\"margin-top: 20px;\">Trân trọng, NICESHOE</footer>\n" +
+                    "    <footer style=\"margin-top: 20px;\">Trân trọng, BEESHOE</footer>\n" +
                     "</body>";
 
             helper.setText(htmlMsg, true);

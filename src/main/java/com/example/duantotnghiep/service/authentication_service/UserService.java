@@ -1,6 +1,7 @@
 package com.example.duantotnghiep.service.authentication_service;
 
 import com.example.duantotnghiep.entity.RefreshToken;
+import com.example.duantotnghiep.request.ForgotPassword;
 import com.example.duantotnghiep.request.LoginRequest;
 import com.example.duantotnghiep.request.RegisterRequest;
 import com.example.duantotnghiep.response.MessageResponse;

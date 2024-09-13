@@ -1,9 +1,12 @@
 package com.example.duantotnghiep.repository;
 
 import com.example.duantotnghiep.entity.SanPham;
-import com.example.duantotnghiep.response.ProductDetailUpdateReponse;
-import com.example.duantotnghiep.response.ProductUpdateResponse;
+import com.example.duantotnghiep.mapper.ChiTietSanPhamCustom;
+import com.example.duantotnghiep.mapper.GioHangCustom;
+import com.example.duantotnghiep.mapper.SoLuongGioHangCustom;
+import com.example.duantotnghiep.mapper.TongTienCustom;
 import com.example.duantotnghiep.response.SanPhamResponse;
+import com.example.duantotnghiep.response.*;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -12,6 +15,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.math.BigDecimal;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 

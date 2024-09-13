@@ -1,6 +1,9 @@
 package com.example.duantotnghiep.service.ban_tai_quay_service;
 
 import com.example.duantotnghiep.mapper.ChiTietSanPhamCustom;
+import com.example.duantotnghiep.response.DetailQuantityToSizeReponse;
+import com.example.duantotnghiep.response.SanPhamGetAllResponse;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 import java.util.UUID;

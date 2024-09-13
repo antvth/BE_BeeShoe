@@ -1,7 +1,9 @@
 package com.example.duantotnghiep.controller.thuoc_tinh_dong_san_pham;
 
 import com.example.duantotnghiep.entity.KieuDe;
+import com.example.duantotnghiep.entity.MauSac;
 import com.example.duantotnghiep.request.KieuDeRequest;
+import com.example.duantotnghiep.request.MauSacRequest;
 import com.example.duantotnghiep.response.MessageResponse;
 import com.example.duantotnghiep.service.thuoc_tinh_dong_san_pham_service.impl.KieuDeServiceImpl;
 import com.opencsv.exceptions.CsvValidationException;

@@ -1,5 +1,6 @@
 package com.example.duantotnghiep.repository;
 
+import com.example.duantotnghiep.entity.ChatLieu;
 import com.example.duantotnghiep.entity.MauSac;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

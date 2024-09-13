@@ -6,20 +6,15 @@ import com.example.duantotnghiep.response.MessageResponse;
 import com.example.duantotnghiep.response.ProductDetailUpdateReponse;
 import com.example.duantotnghiep.response.ProductResponse;
 import com.example.duantotnghiep.response.ProductUpdateResponse;
-import com.example.duantotnghiep.service.thuoc_tinh_dong_san_pham_service.impl.SanPhamServiceImpl;
+import com.example.duantotnghiep.service.thuoc_tinh_dong_san_pham_service.impl.*;
 import com.opencsv.exceptions.CsvValidationException;
+
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.security.Principal;

@@ -1,6 +1,7 @@
 package com.example.duantotnghiep.repository;
 
 import com.example.duantotnghiep.entity.Voucher;
+import com.example.duantotnghiep.response.LoadVoucherCounterResponse;
 import com.example.duantotnghiep.response.VoucherCounterResponse;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

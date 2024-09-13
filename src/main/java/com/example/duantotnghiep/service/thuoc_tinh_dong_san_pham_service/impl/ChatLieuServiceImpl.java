@@ -1,6 +1,8 @@
 package com.example.duantotnghiep.service.thuoc_tinh_dong_san_pham_service.impl;
 
 import com.example.duantotnghiep.entity.ChatLieu;
+import com.example.duantotnghiep.entity.Size;
+import com.example.duantotnghiep.entity.TaiKhoan;
 import com.example.duantotnghiep.repository.ChatLieuRepository;
 import com.example.duantotnghiep.repository.TaiKhoanRepository;
 import com.example.duantotnghiep.request.ChatLieuRequest;

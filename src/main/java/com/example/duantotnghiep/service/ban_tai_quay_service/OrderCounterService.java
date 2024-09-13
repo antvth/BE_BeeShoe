@@ -1,13 +1,12 @@
 package com.example.duantotnghiep.service.ban_tai_quay_service;
 
+import com.example.duantotnghiep.entity.HoaDon;
 import com.example.duantotnghiep.request.HoaDonGiaoThanhToanRequest;
 import com.example.duantotnghiep.request.HoaDonThanhToanRequest;
 import com.example.duantotnghiep.response.*;
-import com.example.duantotnghiep.response.IdGioHangResponse;
-import com.example.duantotnghiep.response.OrderCounterCResponse;
-import com.example.duantotnghiep.response.OrderCounterCartsResponse;
 
 import com.opencsv.exceptions.CsvValidationException;
+
 
 import java.io.IOException;
 import java.util.List;

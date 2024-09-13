@@ -4,6 +4,8 @@ import com.example.duantotnghiep.entity.GiamGia;
 import com.example.duantotnghiep.entity.SanPham;
 import com.example.duantotnghiep.entity.SpGiamGia;
 import com.example.duantotnghiep.mapper.not_login.*;
+import com.example.duantotnghiep.request.GiamGiaRequest;
+import com.example.duantotnghiep.response.SanPhamGiamGiaResponse;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

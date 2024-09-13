@@ -1,5 +1,6 @@
 package com.example.duantotnghiep.controller.quan_ly_nhan_vien_khach_hang;
 
+import com.example.duantotnghiep.request.CreateQLKhachHangRequest;
 import com.example.duantotnghiep.request.NhanVienDTORequest;
 import com.example.duantotnghiep.response.LoaiTaiKhoanResponse;
 import com.example.duantotnghiep.response.MessageResponse;
@@ -10,13 +11,7 @@ import com.opencsv.exceptions.CsvValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
